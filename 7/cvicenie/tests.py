@@ -43,7 +43,7 @@ class GeneratorTests(unittest.TestCase):
     # Uloha 7:
     def test_factorial_digit_sum(self):
         self.assertEqual(e.factorial_digit_sum(10), 27)
-        self.assertEqual(e.factorial_digit_sum(101), 650)
+        self.assertEqual(e.factorial_digit_sum(101), 639)
 
 
     # Uloha 8:
