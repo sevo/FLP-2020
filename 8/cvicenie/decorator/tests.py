@@ -99,3 +99,8 @@ class DecoratorTests(unittest.TestCase):
             sum([-1,2,3,4])
         with self.assertRaises(ValueError):
             sum(['0',2,3,4])
+
+
+# Run
+if __name__ == '__main__':
+    unittest.main()
