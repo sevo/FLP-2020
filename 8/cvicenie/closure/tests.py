@@ -27,3 +27,7 @@ class ClosureTest(unittest.TestCase):
         self.assertEqual(counter2(), 1)
         self.assertEqual(counter2(), 2)
         self.assertEqual(counter(), 4)
+
+
+if __name__ == '__main__':
+    unittest.main()

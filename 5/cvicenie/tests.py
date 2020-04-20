@@ -369,7 +369,7 @@ class TestSequenceFunctions( unittest.TestCase ):
     @unittest.skipIf(is_empty_function(exercises.translate_words),"skipping test_translate_words")
     def test_translate_words( self ):
         words = [ 'merry', 'christmas', 'and', 'happy', 'new', 'year' ]
-        spec = [ 'merry', 'jul', 'och', 'happy', 'nya', '\xc3\xa5r' ]
+        spec = [ 'merry', 'jul', 'och', 'happy', 'nya', 'år' ]
 
         translated = exercises.translate_words( words )
         self.assertEqual( translated, spec )
@@ -442,11 +442,11 @@ class TestSequenceFunctions( unittest.TestCase ):
     @unittest.skipIf(is_empty_function(exercises.find_hapax_legomenons),"skipping test_hapax_legomenon")
     def test_hapax_legomenon( self ):
 
-        ideal = [ 'and', 'valleys', 'over', 'it', 'greenest', 'seraph', 'our', 'its', 'stood', 'stately', 'there', 'spread', 'monarch', 'angels', 'head', 'good',
-            'never', 'half', 'by', 'fabric', 'a', 'reared', 'of', 'radiant', 'tenanted', 'thought', 's', 'so', 'dominion', 'pinion', 'once' ]
+        ideal = { 'and', 'valleys', 'over', 'it', 'greenest', 'seraph', 'our', 'its', 'stood', 'stately', 'there', 'spread', 'monarch', 'angels', 'head', 'good',
+            'never', 'half', 'by', 'fabric', 'a', 'reared', 'of', 'radiant', 'tenanted', 'thought', 's', 'so', 'dominion', 'pinion', 'once' }
         hapax_legomenons = exercises.find_hapax_legomenons( 'data/usher.md' )
 
-        self.assertEqual( ideal, hapax_legomenons )
+        self.assertEqual( ideal, set(hapax_legomenons ))
 
 
     # 37. copy_file_count_lines()
@@ -467,7 +467,7 @@ class TestSequenceFunctions( unittest.TestCase ):
     @unittest.skipIf(is_empty_function(exercises.average_word_length),"skipping test_average_word_length")
     def test_average_word_length( self ):
 
-        ideal_average = 3
+        ideal_average = 3.9693877551020407
         average = exercises.average_word_length( 'data/the-dream.md' )
 
         self.assertEqual( average, ideal_average )
